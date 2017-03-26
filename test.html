@@ -1,0 +1,57 @@
+<script>
+;(function($){
+  function Person(name,age,gender){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+
+
+  Person.prototype.getName = function(){
+    return this.name;
+  }
+
+  Person.prototype.getAge = function(){
+    return this.age;
+  }
+
+  Person.prototype.getGender = function(){
+    return this.gender;
+  }
+  var p1 = new Person("p1",20,"male");
+
+
+
+  console.dir(p1);
+  console.log( p1.getName() );
+  console.log( p1.getAge() );
+  console.log( p1.getGender() );
+  //console.log($);
+
+  var book = {
+    name : "javascript 책",
+    publisher : "xx출판사",
+    date : "2017-03-26"
+  };
+
+  book.getName = function(){
+    return this.name;
+  }
+
+  console.log(book.getName());
+
+  function inFunction(){
+    var value = 100;
+    return function(){
+      return value++;
+    }
+  }
+
+  var c1 = inFunction();
+  console.log( c1() );
+  console.log( c1() );
+  console.log( c1() );
+})(window);
+
+//console.log(Person);
+</script>

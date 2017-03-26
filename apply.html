@@ -1,0 +1,29 @@
+<script>
+
+function TestClass(){
+  this.value1;
+  this.value2;
+}
+
+TestClass.prototype.setValue1 = function(value1){
+  this.value1 = value1;
+}
+
+TestClass.prototype.setValue2 = function(value2){
+  this.value1 = value2;
+}
+
+TestClass.prototype.sum = function(){
+  return this.value1 + this.value2;
+}
+
+var t1 = new TestClass();
+
+t1.setValue1(3);
+t1.setValue2(2);
+
+//var sumVal = TestClass.sum.apply(t1,[1,2]);
+//console.log(sumVal);
+console.log( t1.sum.apply(t1) );
+
+</script>
